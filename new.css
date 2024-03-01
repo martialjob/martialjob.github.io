@@ -1,50 +1,11 @@
-/* Standardstil für hellen Hintergrund */
-.rainbow-text {
-  position: relative;
-  color: #000; /* Textfarbe auf Schwarz setzen */
-  background: #fff; /* Hintergrundfarbe auf Weiß setzen */
-  mix-blend-mode: multiply;
-  overflow: hidden;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-  padding: 2px 4px 6px;
-  margin: -2px -4px -6px;
-}
+    .rainbow-text {
+      background: linear-gradient(90deg, #ff0000, #ff8000, #ffff00, #00ff00, #0000ff, #8000ff, #ff00ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: rainbow-animation 4s linear infinite;
+    }
 
-/* Dunkles Design, wenn der Benutzer eine Präferenz für dunkle Designs hat */
-@media (prefers-color-scheme: dark) {
-  .rainbow-text {
-    color: #fff; /* Textfarbe auf Weiß setzen */
-    background: #000; /* Hintergrundfarbe auf Schwarz setzen */
-  }
-}
-  
-.rainbow-text::before{
-	content: "";
-	position: absolute;
-	top:0;right:0;bottom:0;left:-100%;
-	background: white repeating-linear-gradient(90deg, #14ffe9 0%, #ffc800 16.66666%, #ff00e0 33.33333%, #14ffe9 50.0%);
-	mix-blend-mode: screen;
-	pointer-events: none;
-  animation: move 1s linear infinite;
-}
-
-@keyframes move{
-  0%{transform: translateX(0);}
-  100%{transform: translateX(50%);}
-}
-
-@supports not (mix-blend-mode: multiply) {
-	.rainbow-text{
-	-webkit-text-fill-color: transparent;
-	background-clip: text !important;
-	background: white repeating-linear-gradient(90deg, #14ffe9, #ffc800, #ff00e0, #14ffe9);
-        text-shadow: none;
-	}
-	.rainbow-text::before{ content: none; }
-}
-
-
-.container{
-  background:  inherit;
-  display: inline-block;
-}
+    @keyframes rainbow-animation {
+      0% {background-position: 0% 50%;}
+      100% {background-position: 100% 50%;}
+    }
