@@ -1,12 +1,22 @@
-    .rainbow-text {
-      display: inline-block; /* Element nur so breit wie der Text */
-      background: linear-gradient(90deg, #ff0000, #ff8000, #ffff00, #00ff00, #0000ff, #8000ff, #ff00ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: rainbow-animation 4s linear infinite;
-    }
+  /* CSS-Code für den Regenbogen-Text */
+  .rainbow-text {
+    position: relative;
+  }
 
-    @keyframes rainbow-animation {
-      0% {background-position: 0% 50%;}
-      100% {background-position: 100% 50%;}
-    }
+  .rainbow-text::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #ff0000, #ff8000, #ffff00, #00ff00, #0000ff, #8000ff, #ff00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbow-animation 4s linear infinite;
+  }
+
+  @keyframes rainbow-animation {
+    0% {background-position: 0% 50%;}
+    100% {background-position: 100% 50%;}
+  }
