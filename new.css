@@ -45,8 +45,5 @@
 
 
 .container{
-  display: flex;
-  height: auto;
-  width: auto;
-  background: 
+  background:  inherit;
 }
