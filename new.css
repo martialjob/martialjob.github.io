@@ -1,6 +1,7 @@
   /* CSS-Code für den Regenbogen-Text */
   .rainbow-text {
     position: relative;
+    overflow: hidden;
   }
 
   .rainbow-text::before {
