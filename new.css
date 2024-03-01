@@ -1,14 +1,23 @@
-.rainbow-text{
-	position: relative;
-	color: #000;
-	background: #fff;
-	mix-blend-mode: multiply;
+/* Standardstil für hellen Hintergrund */
+.rainbow-text {
+  position: relative;
+  color: #000; /* Textfarbe auf Schwarz setzen */
+  background: #fff; /* Hintergrundfarbe auf Weiß setzen */
+  mix-blend-mode: multiply;
   overflow: hidden;
-  
   text-shadow: 0 2px 4px rgba(0,0,0,0.5);
   padding: 2px 4px 6px;
   margin: -2px -4px -6px;
 }
+
+/* Dunkles Design, wenn der Benutzer eine Präferenz für dunkle Designs hat */
+@media (prefers-color-scheme: dark) {
+  .rainbow-text {
+    color: #fff; /* Textfarbe auf Weiß setzen */
+    background: #000; /* Hintergrundfarbe auf Schwarz setzen */
+  }
+}
+  
 .rainbow-text::before{
 	content: "";
 	position: absolute;
@@ -29,7 +38,7 @@
 	-webkit-text-fill-color: transparent;
 	background-clip: text !important;
 	background: white repeating-linear-gradient(90deg, #14ffe9, #ffc800, #ff00e0, #14ffe9);
-    text-shadow: none;
+        text-shadow: none;
 	}
 	.rainbow-text::before{ content: none; }
 }
@@ -37,9 +46,7 @@
 
 .container{
   display: flex;
-  justify-content: center;
-  align-items: center;
   height: auto;
   width: auto;
-  background: #eee
+  background: 
 }
