@@ -1,4 +1,5 @@
     .rainbow-text {
+      display: inline-block; /* Element nur so breit wie der Text */
       background: linear-gradient(90deg, #ff0000, #ff8000, #ffff00, #00ff00, #0000ff, #8000ff, #ff00ff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
