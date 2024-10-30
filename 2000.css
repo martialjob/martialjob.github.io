@@ -41,3 +41,17 @@ a {
 a:hover {
   color: #ff4500;
 }
+
+.falling-object {
+  position: absolute;
+  top: -10%;
+  width: 30px;
+  height: auto;
+  animation: fall 5s linear infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh) rotate(360deg);
+  }
+}
